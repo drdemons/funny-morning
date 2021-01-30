@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  web:
+    image: funny-morning
+    secrets:
+      - config
+    environment:
+      - PROFILE=prod
+    build:
+      context: service
+    volumes:
+      - type: bind
+        source: ./client.session
+        target: /code/client.session
+
+secrets:
+  config:
+    external: true
