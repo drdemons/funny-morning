@@ -10,14 +10,15 @@ from telegram_client import Client
 
 def job(user_config):
     telegram = user_config['telegram']
+    message = user_config['message']
     client = Client(telegram['api_id'],
                     telegram['api_hash'],
-                    telegram['group_id'])
+                    telegram['group_id'],
+                    message['text'])
 
     anecdote = generator.generate()
     logging.info(f'received anecdote {anecdote}\n')
-    message_response = client.send_message(anecdote)
-    logging.info(f'Send message response {message_response}')
+    client.send_message(anecdote)
 
 
 def weekday_job(name_job, params, send_time=None):
@@ -39,4 +40,3 @@ def main():
 if __name__ == '__main__':
     logging.info('Start service complete')
     main()
-
