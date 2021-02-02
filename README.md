@@ -4,7 +4,7 @@
 
 ## Прежде чем
 
-Прежде чем воспользоваться нужно получить app_ip и app_hash для кастомного клиента телеграмма, это можно сделать [тут](https://my.telegram.org/auth?to=apps).
+Прежде чем воспользоваться нужно получить api_ip и api_hash для кастомного клиента телеграмма, это можно сделать [тут](https://my.telegram.org/auth?to=apps).
 
 Так же нужно настроить конфиг это yaml файл со следующим форматом:
 ```yaml
@@ -35,9 +35,11 @@ for dialog in client.iter_dialogs():
 ## Quick start.
 
 * Нужно с клонировать репозиторий с github,
-  >
+  > git clone https://github.com/drdemons/funny-morning.git
 * Установить переменную окружения PROFILE.
   > export PROFILE=dev (что бы приложение читало локальный конфиг)
+* Выполнить команду:
+  > pip install -r requirements.txt
 * Запустить файл main.py.
   > python3 main.py
 
