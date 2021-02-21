@@ -51,8 +51,6 @@ jobs:
           push: true
           image: 171287/funny-morning
           tags: 171287/funny-morning:v0.1.1
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
