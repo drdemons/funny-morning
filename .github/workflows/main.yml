@@ -47,7 +47,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./service
-          file: ./Dockerfile
+          file: Dockerfile
           push: true
           image: 171287/funny-morning
           tags: v0.1.1, latest
