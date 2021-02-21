@@ -50,7 +50,7 @@ jobs:
           file: ./service/Dockerfile
           push: true
           image: 171287/funny-morning
-          tags: v0.1.1, latest
+          tags: 171287/funny-morning:v0.1.1, latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
