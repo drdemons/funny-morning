@@ -5,7 +5,7 @@ import logging
 
 
 @dataclass
-class Client:
+class TClient:
     api_id: int
     api_hash: str
     diggers: int

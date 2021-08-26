@@ -4,3 +4,4 @@ beautifulsoup4
 lxml
 pyyaml
 schedule
+slack_sdk

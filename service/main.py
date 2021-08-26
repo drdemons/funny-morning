@@ -1,24 +1,22 @@
+import logging
 import time
 from datetime import datetime
 
 import schedule
-import logging
+
 import config
 import generator
-from telegram_client import Client
+from service.builder_client import build
 
 
 def job(user_config):
-    telegram = user_config['telegram']
-    message = user_config['message']
-    client = Client(telegram['api_id'],
-                    telegram['api_hash'],
-                    telegram['group_id'],
-                    message['text'])
+    clients = build(user_config)
 
     anecdote = generator.generate()
     logging.info(f'received anecdote {anecdote}\n')
-    client.send_message(anecdote)
+    for client in clients:
+        logging.info(client)
+        client.send_message(anecdote)
 
 
 def weekday_job(name_job, params, send_time=None):
